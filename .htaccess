@@ -1,0 +1,6 @@
+<Files "reader.py">
+   deny from all 
+</Files>
+<Files "template.html">
+   deny from all
+</Files>
