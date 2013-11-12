@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0 }
+      #map-canvas { height: 100% }
+    </style>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAD16_jGgWdRrLVOkpQMOxbIvRiIWY1TQg&sensor=false">
+    </script>
+    <script type="text/javascript">
+      function initialize() {
+        var myloc = new google.maps.LatLng($lat,$lng);
+        var mapOptions = {
+          center: myloc,
+          zoom: 15,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("map-canvas"),
+            mapOptions);
+        var me = new google.maps.Marker({
+            position: myloc,
+            map: map,
+            title: "This is me!",
+            animation: google.maps.Animation.DROP,
+            icon: "http://tante.cc/images/tante_marker.png",
+        });
+        contentString = '<b>tante is here</b><br>(last update at <br>$time)';
+        var infowindow = new google.maps.InfoWindow({
+            content: contentString,
+            maxWidth: 150,
+            position: myloc,
+        });
+        
+        infowindow.open(map,me);
+        google.maps.event.addListener(me, 'click', function() {
+            infowindow.open(map,me);
+        });
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+  </head>
+  <body>
+    <div id="map-canvas"/>
+  </body>
+</html>
