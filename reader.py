@@ -2,8 +2,8 @@
 
 import oauth2, time, urllib, urllib2, json, datetime
 
-ACCESS = "6D6WYASM5O6LUUQK6V7IA5EDGET7UHXK6JXQH4J6KZJY2BVVA5YA"
-SECRET = "9JIC60IDJWXH13N70I4ULBACFO490GKZZQORBU19OJOLBXBH503XW6XBJ50ZC6BW"
+ACCESS = "ACCESS_KEY"
+SECRET = "SECRET KEY"
 URL = "https://openpaths.cc/api/1" 
 
 def build_auth_header(url, method):
