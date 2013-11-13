@@ -2,7 +2,7 @@
 
 import oauth2, time, urllib, urllib2, json, datetime
 
-ACCESS = "ACCESS_KEY"
+ACCESS = "ACCESS_KEY"  # insert your own keys here
 SECRET = "SECRET KEY"
 URL = "https://openpaths.cc/api/1" 
 
