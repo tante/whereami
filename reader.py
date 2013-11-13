@@ -19,7 +19,7 @@ def build_auth_header(url, method):
     request.sign_request(signature_method, consumer, None)
     return request.to_header()
 
-params = {"num_points": 1}    # get the last entry
+params = {"num_points": 1}    # get only the last entry
 query = "%s?%s" % (URL, urllib.urlencode(params))
 try:
     request = urllib2.Request(query)
